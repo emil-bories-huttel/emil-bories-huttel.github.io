@@ -86,26 +86,37 @@
   <div class="slide"><img src="photos/09.jpeg" alt=""></div>
 
   <script>
-    const slides = document.querySelectorAll('.slide');
-    const counter = document.getElementById('counter');
-    const delay = 4000;
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const delay = 5000;
 
-    let order = [...Array(slides.length).keys()];
-    order.sort(() => Math.random() - 0.5);
-    let i = 0;
+  let order = [...Array(slides.length).keys()];
+  order.sort(() => Math.random() - 0.5);
+  let i = 0;
 
-    function show(index) {
-      slides.forEach(s => s.classList.remove('active'));
-      slides[order[index]].classList.add('active');
-      counter.textContent = (index + 1) + ' / ' + slides.length;
-    }
+  function show(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[order[index]].classList.add('active');
+    counter.textContent = (index + 1) + ' / ' + slides.length;
+  }
 
-    show(0);
-    setInterval(() => {
-      i = (i + 1) % order.length;
-      show(i);
-    }, delay);
-  </script>
+  function next() {
+    i = (i + 1) % order.length;
+    show(i);
+    resetTimer();
+  }
+
+  let timer = setInterval(next, delay);
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, delay);
+  }
+
+  document.body.addEventListener('click', next);
+
+  show(0);
+</script>
 
 </body>
 </html>
