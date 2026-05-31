@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Emil Bories Hüttel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Emil Bories Hüttel — PhD Fellow in Political Science, Aarhus University">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Helvetica+Neue:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #FFFFFF;
+      --mid: #888;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --title: 'Fraunces', Georgia, serif;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background-color: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      cursor: default;
+      transition: background-color 0.15s, color 0.15s, filter 0.15s;
+    }
+
+    body.inverted {
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    body.inverted a { color: var(--white); }
+    body.inverted .toggle-hint { color: #555; }
+    body.inverted .meta { color: #666; }
+    body.inverted .divider { border-color: #222; }
+
+    .toggle-hint {
+      position: fixed;
+      top: 0.6rem;
+      right: 0.9rem;
+      font-size: 0.5rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #bbb;
+      user-select: none;
+      z-index: 10;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Name block ── */
+    .nameblock {
+      padding: 4.5rem 0 1.5rem;
+    }
+
+    .nameblock h1 {
+      font-family: var(--title);
+      font-size: clamp(1.6rem, 6vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .nameblock .role {
+      margin-top: 0.6rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    body.inverted .nameblock .role { color: #666; }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #d8d5ce;
+      margin: 0;
+    }
+
+    /* ── Bio section ── */
+    .bio {
+      padding: 3.5rem 0 2rem;
+      max-width: 640px;
+    }
+
+    .bio p {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 2.2vw, 1.25rem);
+      line-height: 1.65;
+      margin-bottom: 1.4em;
+    }
+
+    .bio p:last-child { margin-bottom: 0; }
+
+    .bio strong {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Research note ── */
+    .research {
+      padding: 2.5rem 0 3rem;
+      max-width: 640px;
+    }
+
+    .research .label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+
+    body.inverted .research .label { color: #555; }
+
+    .research p {
+      font-family: var(--serif);
+      font-size: clamp(.5rem, 1.8vw, .72rem);
+      line-height: 1.7;
+      color: #333;
+    }
+    
+    .research a {
+  color: ##333;
+}
+
+    body.inverted .research p { color: #aaa; }
+    body.inverted .research a { color: #aaa; }
+
+    /* ── Footer / links ── */
+    .footer {
+      padding: 2rem 0 3.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer .meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: #999;
+      line-height: 1.9;
+    }
+
+    .footer nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+    }
+
+    .footer nav a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    body.inverted .footer nav a { color: var(--white); }
+
+    .footer nav a:hover { border-color: currentColor; }
+
+    a { color: var(--black); }
+
+    @media (max-width: 520px) {
+      .wrap { padding: 0 1.25rem; }
+      .nameblock { padding-top: 3rem; }
+      .footer { flex-direction: column-reverse; }
+      .footer nav { align-items: flex-start; }
+    }
+    
+    details {
+  margin-top: 0.5rem;
+}
+
+summary {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+  color: var(--mid);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details p {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 0.75rem;
+  max-width: 580px;
+  color: #444;
+}
+
+body.inverted details p {
+  color: #aaa;
+}
+  </style>
+</head>
+<body onclick="document.body.classList.toggle('inverted')">
+
+  <div class="toggle-hint">Click anywhere to toggle view</div>
+
+  <div class="wrap">
+
+    <header class="nameblock">
+      <h1>Emil Bories Hüttel</h1>
+    </header>
+
+    <section class="bio">
+      <p>
+        Hi, I'm a first year <strong>PhD Fellow at the Department of Political Science, Aarhus University,</strong> from which I also hold my BSc and MSc. My work investigates political elites' belief formation and sits at the intersection of political psychology, political behaviour, and public policy.
+      </p>
+      <p>
+        My disseration investigates <strong>political elites’ beliefs about policy levers</strong> and the role of scientific evidence – or the lack thereof – in shaping these beliefs and informing public policy. It pays particular attention to how uncertainty, both in beliefs and in evidence, shapes these processes.
+      </p>
+      <p>
+        Methodologically, I am particularly interested in bayesian inference, computational methods, and causal inference. A current obsession of mine is eliciting and measuring <strong>beliefs as probability distributions</strong>.         
+      </p>
+    </section>
+
+    <section class="research">
+      <p class="label">Work in progress</p>
+      <p>
+        "Pull the lever, Kronk: Measuring politicians’ probabilistic beliefs about the causal effects of various policy levers"
+      </p>
+      <details>
+        <summary>Abstract</summary>
+        <p>Soon to come</p>
+      </details>
+    </section>
+    
+        <section class="research">
+      <p class="label">Publications</p>
+      <p>
+        Loser with no publications:(
+      </p>
+    </section>
+    
+            <section class="research">
+      <p class="label">Hobby Projects</p>
+      <p>
+        <a href="https://emilbhuttel.shinyapps.io/Croissant/" target="_blank" rel="noopener">Paris Croissant Database</a>
+      </p>
+    </section>
+
+    <hr class="divider">
+
+    <footer class="footer">
+      <p class="meta">
+        Department of Political Science<br>
+        Aarhus University<br>
+        Bartholins Allé 7 <br> 
+        Aarhus C, Denmark<br>
+        <br>
+        CV and papers upon request.
+      </p>
+      <nav>
+        <a href="mailto:ebh@ps.au.dk">Email</a>
+        <a href="https://x.com/BoriesEmil?s=21&t=w7JwV0yOd1ZlWbgTgLlGfQ" target="_blank" rel="noopener">Twitter / X</a>
+        <a href="https://www.linkedin.com/in/emil-bories-h%C3%BCttel/" target="_blank" rel="noopener">Linkedin</a>
+        <a href="https://pure.au.dk/portal/en/persons/ebh@ps.au.dk/" target="_blank" rel="noopener">University Site</a>
+        <a href="https://github.com/emil-bories-huttel" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0009-0002-6377-6263" target="_blank" rel="noopener">ORCID</a>
+      </nav>
+    </footer>
+
+  </div>
+
+  <script>
+    document.body.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') e.stopPropagation();
+      if (e.target.tagName === 'SUMMARY') e.stopPropagation();
+    }, true);
+  </script>
+
+</body>
+</html>
