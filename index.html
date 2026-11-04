@@ -195,25 +195,38 @@
       .footer nav { align-items: flex-start; }
     }
     
-    details {
-  margin-top: 0.5rem;
-}
+.paper { margin-bottom: 1.5rem; }
 
-summary {
+.paper-links {
   font-family: var(--sans);
   font-size: 0.5rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--mid);
+  margin-top: 0.3rem;
+}
+
+.paper-links details { display: inline; }
+
+.paper-links summary {
+  display: inline;
   cursor: pointer;
   list-style: none;
+}
+.paper-links summary::-webkit-details-marker { display: none; }
+
+.paper-links a {
   color: var(--mid);
+  text-decoration: none;
 }
 
-summary::-webkit-details-marker {
+.paper-links a:hover,
+.paper-links summary:hover {
+  text-decoration: underline;
+}
+
+.research .abstract {
   display: none;
-}
-
-details p {
   font-family: var(--serif);
   font-size: 1rem;
   line-height: 1.7;
@@ -223,7 +236,11 @@ details p {
   text-align: justify;
 }
 
-body.inverted details p {
+.research .paper:has(details[open]) .abstract {
+  display: block;
+}
+
+body.inverted .research .abstract {
   color: #aaa;
 }
   </style>
@@ -240,35 +257,34 @@ body.inverted details p {
 
     <section class="bio">
       <p>
-        Hi, I'm a first year <strong>PhD Fellow</strong> at the Department of Political Science, <strong>Aarhus University</strong>. My work investigates political elites' belief formation and sits at the intersection of political psychology, political behaviour, and public policy.
+        Hi, I'm a first year <strong>PhD Fellow</strong> at the Department of Political Science, <strong>Aarhus University</strong>. My work investigates how politians form beliefs about public policy under uncertainty and sits at the intersection of political psychology, political behaviour, and evidence-based policymaking.
       </p>
       <p>
-        My dissertation investigates political elites’ beliefs about policy levers and the role of scientific evidence – or the lack thereof – in shaping these beliefs and informing public policy. It pays particular attention to how uncertainty, both in beliefs and in evidence, shapes these processes.
+        As a wannabe methodologist I dabble in bayesian inference, hierarchical modelling, computational methods, and causal inference. A current obsession of mine is eliciting and measuring beliefs as probability distributions.         
       </p>
-      <p>
-        Methodologically, I have a particular affinity for bayesian inference, hierarchical modelling, computational methods, and causal inference. A current obsession of mine is eliciting and measuring beliefs as probability distributions.         
-      </p>
-      <p>
-        I received my bachelor's and master's degree in Political Science from Aarhus University. 
-        </p>
     </section>
 
     <section class="research">
       <p class="label">Work in progress</p>
-      <p>
-        "Pull the lever, Kronk: Measuring politicians’ probabilistic beliefs about the causal effects of various policy levers"
-      </p>
-      <details>
-        <summary>[abstract]</summary>
-        <p>When citizens delegate decision-making authority to elected politicians, they implicitly rely on those politicians to understand what voters want and how policy translates into real-world outcomes. Yet while a growing literature examines whether politicians accurately perceive public opinion, far less attention has been paid to whether politicians hold accurate—and appropriately uncertain—beliefs about the causal effects of the policies they enact. I argue that accuracy alone is an insufficient standard for evaluating politicians' causal beliefs. Given the inherent uncertainty of causal evidence, what we can more reasonably demand is calibration: that politicians know the limits of their own knowledge and express uncertainty accordingly. An overconfident politician with inaccurate beliefs is substantially more consequential than an uncertain one, as firmly held beliefs resist correction and may produce legislative action unsupported by the evidence. I develop a measurement framework that models politicians' causal beliefs as probability distributions, capturing both direction and certainty rather than point estimates.</p>
-      </details>
+      <div class="paper">
+    <p>"Pull the lever, Kronk: Measuring politicians' probabilistic beliefs about the causal effects of various policy levers"</p>
+    <div class="paper-links">
+      <details><summary>[abstract]</summary></details>
+    </div>
+    <p class="abstract">When citizens delegate decision-making authority to elected politicians, they implicitly rely on those politicians to understand what voters want and how policy translates into real-world outcomes. Yet while a growing literature examines whether politicians accurately perceive public opinion, far less attention has been paid to whether politicians hold accurate—and appropriately uncertain—beliefs about the causal effects of the policies they enact. I argue that accuracy alone is an insufficient standard for evaluating politicians' causal beliefs. Given the inherent uncertainty of causal evidence, what we can more reasonably demand is calibration: that politicians know the limits of their own knowledge and express uncertainty accordingly. An overconfident politician with inaccurate beliefs is substantially more consequential than an uncertain one, as firmly held beliefs resist correction and may produce legislative action unsupported by the evidence. I develop a measurement framework that models politicians' causal beliefs as probability distributions, capturing both direction and certainty rather than point estimates.</p>
+  </div>
     </section>
 
             <section class="research">
       <p class="label">Publications</p>
-      <p>
-        Loser with no publications:(
-      </p>
+<div class="paper">
+    <p>Bloch, C. W., Graversen, E. K., Hüttel, E. B., Mikkelsen, J. N., & Norn, M.-T. (2026). Effektmåling af Programstøttemidler: En model for effektmåling i og evaluering af de tre grønne Udviklings- og Demonstrationsprogrammer. CFA Scientific Reports, 16(6), 1–123. </p>
+    <div class="paper-links">
+      <details><summary>[abstract]</summary></details>
+      &middot; <a href="https://doi.org/10.7146/cfasr.v16i6.170937" target="_blank" rel="noopener">[link]</a>
+    </div>
+    <p class="abstract">When citizens delegate decision-making authority ... rather than point estimates.</p>
+  </div>
     </section>
     
         <section class="research">
