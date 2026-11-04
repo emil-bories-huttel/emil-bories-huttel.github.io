@@ -140,7 +140,7 @@
     }
     
     .research a {
-  color: ##333;
+  color: #333;
 }
 
     body.inverted .research p { color: #aaa; }
@@ -206,7 +206,7 @@
   margin-top: 0.3rem;
 }
 
-.paper-links details { display: inline; }
+.paper-links details { display: inline-block; }
 
 .paper-links summary {
   display: inline;
@@ -227,9 +227,6 @@
 
 .research .abstract {
   display: none;
-  font-family: var(--serif);
-  font-size: 1rem;
-  line-height: 1.7;
   margin-top: 0.75rem;
   max-width: 580px;
   color: #444;
@@ -289,13 +286,16 @@ body.inverted .research .abstract {
     
         <section class="research">
       <p class="label">Teaching</p>
-      <p>
-        Student Instructor in "Introduction to Political Science" @ Aarhus University (2023, 2024, 2025)  
-      </p>
-      <details>
-        <summary>[course description]</summary>
-        <p>The course provides first year bachelor students with an introduction to fundamental topics in political science and an overview of the development, organization, and functioning of the Danish political system, as well as Denmark’s position in European and international politics.</p>
-      </details>
+          <section class="research">
+  <p class="label">Teaching</p>
+  <div class="paper">
+    <p>Student Instructor in "Introduction to Political Science" @ Aarhus University (2023, 2024, 2025)</p>
+    <div class="paper-links">
+      <details><summary>[course description]</summary></details>
+    </div>
+    <p class="abstract">The course provides first year bachelor students with an introduction to fundamental topics in political science and an overview of the development, organization, and functioning of the Danish political system, as well as Denmark’s position in European and international politics.</p>
+  </div>
+</section>
     </section>
     
             <section class="research">
